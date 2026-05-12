@@ -35,7 +35,8 @@ visible and actionable.
 
 ## Dashboard Overview
 
-> 📸 Add your dashboard screenshot here
+> ### Consolidated Overview
+<img width="1215" height="684" alt="image" src="https://github.com/user-attachments/assets/1ff0952e-8c0f-498f-a130-7927ea5ea6e4" />
 
 The report is structured around three analytical layers:
 
@@ -173,8 +174,5 @@ The raw dataset required significant work before it was ready for modeling:
 <img width="1223" height="646" alt="image" src="https://github.com/user-attachments/assets/66442bec-ecd1-4fbb-8830-f319a8ba9f1e" />
 
 *Revenue: £22.59K | Goal: +59.63% | Avg Transaction: £94.93*
-
-### Consolidated Overview
-<img width="1215" height="684" alt="image" src="https://github.com/user-attachments/assets/1ff0952e-8c0f-498f-a130-7927ea5ea6e4" />
 
 
