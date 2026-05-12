@@ -1,13 +1,154 @@
-# 🍽️ Restaurant Sales Analysis Dashboard
+# Restaurant Business Intelligence Dashboard
 
-## 📊 Overview
+**Power BI · Excel · DAX · Data Modeling**
 
-An interactive Power BI analytics dashboard providing comprehensive insights into restaurant sales performance across four UK locations (Birmingham, Liverpool, London, and Manchester). This project enables data-driven decision making through real-time performance tracking, trend analysis, and actionable business intelligence.
+A business intelligence dashboard built to transform raw restaurant data 
+into decision-ready insights across customer behavior, cuisine performance, 
+and service attributes. Designed for operators and analysts who need to move 
+beyond gut-feel into evidence-based strategy.
 
-**Analysis Period**: May 3, 2024 - July 1, 2025  
-**Locations**: 4 UK Cities  
-**Total Transactions**: 123,000+  
-**Total Revenue**: £76.12K  
+---
+
+## The Problem
+
+Restaurant managers typically know their revenue figures but lack visibility 
+into *why* performance varies — why one cuisine outperforms another, why 
+certain customer segments rate lower, or which service attributes are silently 
+dragging satisfaction scores down. This dashboard makes those relationships 
+visible and actionable.
+
+---
+
+## Business Questions Answered
+
+- Which cuisines consistently earn higher satisfaction scores, and which have 
+  a demand gap despite good ratings?
+- How does customer budget level affect rating behavior and dining preferences?
+- Do service attributes — alcohol availability, smoking policy — meaningfully 
+  shift rating distributions?
+- Which customer segments are most underserved, and where is the growth 
+  opportunity?
+- What combination of factors (food, service, environment, price) drives a 
+  restaurant's overall rating?
+
+---
+
+## Dashboard Overview
+
+> 📸 Add your dashboard screenshot here
+
+The report is structured around three analytical layers:
+
+**1. Restaurant Performance** — rating distribution, cuisine-level benchmarks, 
+and attribute impact analysis
+
+**2. Customer Segmentation** — budget tier breakdown, demographic preferences, 
+and behavioral patterns by segment
+
+**3. Service & Environment Analysis** — how operational attributes (alcohol 
+availability, smoking policy, ambiance) correlate with satisfaction scores
+
+---
+
+## Key Findings
+
+**Budget level shapes rating behavior, not just spend.**
+Higher-budget customers give more consistent ratings. Lower-budget segments 
+show wider variance — their satisfaction is more sensitive to perceived value 
+for money, meaning small pricing or service missteps hit ratings harder.
+
+**Strong cuisines are hidden by weak demand — not weak quality.**
+Several cuisines post above-average satisfaction scores but low volume. The 
+bottleneck is visibility and positioning, not product quality. These are the 
+clearest low-risk expansion opportunities in the dataset.
+
+**Service attributes matter more than most operators assume.**
+Alcohol availability and smoking policy don't just attract or repel certain 
+customers — they actively shift the rating distribution of customers who do 
+visit. Mismatches between environment and customer expectation erode scores 
+even when food quality is high.
+
+**Ratings are a composite signal, not a food quality score.**
+Satisfaction is shaped by the interaction of service, environment, price 
+expectations, and food. Improvement plans that weight food quality alone 
+miss most of the lever.
+
+---
+
+## KPIs Tracked
+
+| Metric | Description |
+|---|---|
+| Average Restaurant Rating | Overall satisfaction benchmark across the dataset |
+| Rating Distribution | Spread of scores by cuisine, budget tier, and service attribute |
+| Cuisine Performance Index | Satisfaction score vs. demand volume per cuisine type |
+| Budget Segment Split | Customer count and average rating by low / medium / high budget |
+| Service Attribute Impact | Rating delta between restaurants with and without key service features |
+
+---
+
+## Data Preparation
+
+The raw dataset required significant work before it was ready for modeling:
+
+- Resolved nulls and standardised inconsistent categorical fields (cuisine 
+  labels, budget tiers, rating scales)
+- Cleaned free-text entries into groupable categories using Power Query
+- Built calculated columns for segmentation logic
+- Created DAX measures for all KPIs — averages, segment comparisons, and 
+  attribute-filtered ratings
+- Structured the data model with clear dimension/fact separation for clean 
+  cross-filtering
+
+---
+
+## Business Impact
+
+| Decision Area | How the Dashboard Helps |
+|---|---|
+| Menu & Pricing | Identify which cuisine-price combinations earn the strongest ratings by segment |
+| Expansion Planning | Pinpoint high-satisfaction, low-volume cuisines where demand can be grown |
+| Service Improvement | Quantify the rating impact of specific service attributes before committing to changes |
+| Marketing | Understand which customer segments are under-engaged and what they respond to |
+| Positioning | Diagnose whether a rating problem is food, service, environment, or expectation mismatch |
+
+---
+
+## Tools & Technologies
+
+| Tool | Purpose |
+|---|---|
+| Power BI Desktop | Report development, interactive visualisations, cross-filtering |
+| Power Query (M) | Data cleaning, transformation, and model preparation |
+| DAX | KPI calculations, segmentation logic, comparative measures |
+| Microsoft Excel | Source data preparation and validation |
+
+---
+
+## Getting Started
+
+1. Clone or download this repository
+2. Open the `.pbix` file in Power BI Desktop (free download from microsoft.com)
+3. If prompted, reconnect the data source to the Excel file in the repo —
+   **Home → Transform Data → Data Source Settings**
+4. Use the slicers (cuisine type, budget tier, service attributes) to explore 
+   the data by segment
+
+---
+
+## What's Next
+
+- **Demand-side analysis** — the current dataset explains *satisfaction* but 
+  not *volume*. Adding footfall or order frequency data would reveal whether 
+  high-rated cuisines are also high-demand, or just undiscovered.
+
+- **Competitor benchmarking layer** — enriching the dataset with comparable 
+  restaurants in the same area would shift this from internal analysis to 
+  true competitive intelligence.
+
+- **Segmentation clustering** — replace manual budget tiers with k-means or 
+  similar clustering on actual spending patterns to find natural customer 
+  groups the current categories may be missing.
 
 ---
 
@@ -36,274 +177,4 @@ An interactive Power BI analytics dashboard providing comprehensive insights int
 ### Consolidated Overview
 <img width="1215" height="684" alt="image" src="https://github.com/user-attachments/assets/1ff0952e-8c0f-498f-a130-7927ea5ea6e4" />
 
-*Combined Performance: £76.12K | Goal: +55.96%*
 
----
-
-## 📈 Key Metrics
-
-### Performance Summary
-
-| Location | Revenue | vs Goal | Transactions | Avg Transaction | Discount % | Status |
-|----------|---------|---------|--------------|-----------------|------------|--------|
-| **Birmingham** | £11.65K | -23.91% | 26K | £95.64 | 5.58% | ⚠️ Below Target |
-| **Liverpool** | £21.23K | +29.57% | 26K | £112.17 | 6.88% | ✅ Exceeds Target |
-| **London** | £20.65K | +7.14% | 38K | £111.88 | 5.53% | ✅ Above Target |
-| **Manchester** | £22.59K | +59.63% | 34K | £94.93 | 6.96% | 🎯 Top Performer |
-| **TOTAL** | **£76.12K** | **+55.96%** | **123K** | **£103.93** | **6.21%** | **✅ Strong** |
-
-### Critical KPIs
-
-- **Overall Goal Achievement**: +55.96% above target
-- **Best Performer**: Manchester (+59.63%)
-- **Needs Attention**: Birmingham (-23.91%)
-- **Highest Volume**: London (38K transactions)
-- **Highest Avg Transaction**: Liverpool (£112.17)
-- **Peak Day**: Sunday (2-3x weekday revenue)
-
----
-
-## 📊 Visualizations
-
-### Dashboard Components
-
-#### 1. Revenue Performance Card
-- Real-time revenue tracking
-- Goal comparison with percentage variance
-- Color-coded performance indicators (Red: below goal, Green: above goal)
-
-#### 2. Transaction Metrics
-- Total transaction count
-- Average transaction value
-- Discount percentage by location
-
-#### 3. Temporal Analysis Charts
-**Revenue by Week Number and Year**
-- Line chart comparing 2024 vs 2025 performance
-- Trend identification across 26-week period
-- Seasonal pattern recognition
-
-**Units Per Transaction Trend**
-- Weekly average units sold per transaction
-- Year-over-year comparison
-- Customer behavior insights
-
-**Revenue by Days and Years**
-- Bar chart showing daily performance patterns
-- Sunday identified as peak day
-- Weekday vs weekend analysis
-
-#### 4. Product Performance
-**Revenue and YoY Growth by Restaurant**
-- Horizontal bar chart with 2024 vs 2025 comparison
-- Location-specific growth rates
-- Performance benchmarking
-
-**Total Quantity by Name and Year**
-- Top-selling menu items visualization
-- Year-over-year quantity trends
-- Best sellers: Extra Jalapeños, Spanakopita, Lychee P.
-
-**Revenue by Name and Year**
-- Revenue contribution by menu item
-- Top performers: Creamy Mush, Black Pepper, Yuzu Pepper
-- Product mix optimization insights
-
-#### 5. Interactive Filters
-- Date range slider (5/3/2024 - 7/1/2025)
-- Location selector (Birmingham, Liverpool, London, Manchester)
-- Filter and refresh controls
-
-#### 6. Advanced Analytics
-**Revenue vs Discount Percentage by Restaurant**
-- Scatter plot showing discount impact on revenue
-- Correlation analysis
-- Pricing strategy insights
-
----
-
-## 💼 Business Impact
-
-### Achieved Results
-
-1. **Revenue Growth**: 55.96% above organizational targets
-2. **Performance Visibility**: Real-time tracking across 4 locations
-3. **Data-Driven Decisions**: Actionable insights reducing guesswork
-4. **Operational Efficiency**: Identified peak days/times for resource optimization
-5. **Product Optimization**: Clear visibility of top-performing menu items
-
-### Problem Solved
-
-**Before**:
-- Manual sales reporting taking 2-3 days per location
-- Limited visibility into cross-location performance
-- Reactive decision-making based on delayed data
-- No standardized performance metrics
-
-**After**:
-- Real-time dashboard accessible to all stakeholders
-- Instant comparative analysis across locations
-- Proactive strategy adjustment based on trends
-- Standardized KPIs with goal tracking
-
-### ROI Impact
-
-- **Time Savings**: 90% reduction in reporting time (from 12 hours/week to 1 hour/week)
-- **Revenue Increase**: Manchester strategy replication could lift Birmingham revenue by ~£6K
-- **Cost Optimization**: Discount strategy refinement potential savings of £2-3K monthly
-- **Inventory Efficiency**: Demand forecasting reducing waste by estimated 15%
-
----
-
-## 🎯 Business Recommendations
-
-### 🚨 Immediate Actions (0-30 Days)
-
-#### 1. Birmingham Turnaround Plan
-**Issue**: -23.91% below goal despite adequate transaction volume
-
-**Actions**:
-- Conduct pricing audit vs Liverpool (same transaction volume, £16.53 lower avg ticket)
-- Implement upselling training for Birmingham staff
-- Launch "Birmingham Boost" promotional campaign
-- Review menu mix and introduce high-margin items
-
-**Expected Impact**: +10-15% revenue increase within 30 days
-
-#### 2. Weekend Capacity Optimization
-**Issue**: Sunday generates 2-3x weekday revenue
-
-**Actions**:
-- Increase Sunday staffing by 30-40%
-- Pre-order inventory for Sunday peak demand
-- Implement reservation system to manage capacity
-- Test extended Sunday hours
-
-**Expected Impact**: Capture additional £5-7K monthly revenue
-
-#### 3. End-of-Period Campaign
-**Issue**: Sharp revenue decline around week 26
-
-**Actions**:
-- Launch "Last Week Specials" promotion weeks 24-26
-- Email marketing campaign targeting loyal customers
-- Limited-time menu items to drive urgency
-- Partner with delivery apps for extended reach
-
-**Expected Impact**: Reduce decline by 20-30%
-
----
-
-### 📅 Short-Term Initiatives (30-90 Days)
-
-#### 4. Replicate Manchester Success Model
-**Opportunity**: Manchester exceeds goal by 59.63%
-
-**Actions**:
-- Document Manchester's operational procedures
-- Analyze promotional calendar and discount strategy
-- Conduct customer survey to understand satisfaction drivers
-- Pilot Manchester's best practices in Birmingham
-
-**Expected Impact**: Lift underperforming locations by 15-25%
-
-#### 5. Weekday Traffic Driver Program
-**Issue**: Thursday-Tuesday shows consistent low performance
-
-**Actions**:
-- "Weekday Warrior" loyalty program (earn double points Mon-Thu)
-- Corporate lunch partnerships with local businesses
-- "Taco Tuesday" and "Thirsty Thursday" themed promotions
-- Happy hour pricing 2-5 PM on slow days
-
-**Expected Impact**: 20-30% increase in weekday transactions
-
-#### 6. Menu Engineering Project
-**Opportunity**: Top items identified but not optimized
-
-**Actions**:
-- Promote high-margin bestsellers (Extra Jalapeños, Spanakopita)
-- Create combo meals featuring top performers
-- Eliminate bottom 10% low-performing items
-- Introduce seasonal variations of bestsellers
-
-**Expected Impact**: 5-8% improvement in average transaction value
-
----
-
-### 🎯 Long-Term Strategy (6+ Months)
-
-#### 7. Dynamic Pricing & Discount Optimization
-**Insight**: Higher discounts (6.88-6.96%) correlate with better revenue
-
-**Actions**:
-- Implement AI-driven dynamic pricing model
-- A/B test discount levels by location and day
-- Introduce tiered loyalty program (5%, 10%, 15% based on spend)
-- Real-time promotion adjustments based on demand
-
-**Expected Impact**: 10-15% margin improvement while maintaining volume
-
-#### 8. Predictive Analytics Implementation
-**Opportunity**: Leverage historical patterns for forecasting
-
-**Actions**:
-- Build demand forecasting model for inventory planning
-- Predict weekly revenue with 85%+ accuracy
-- Automate staff scheduling based on predicted traffic
-- Early warning system for underperformance
-
-**Expected Impact**: 15-20% reduction in food waste, optimal labor costs
-
-#### 9. Customer Segmentation & Personalization
-**Gap**: No visibility into customer behavior patterns
-
-**Actions**:
-- Integrate CRM data with sales analytics
-- Segment customers (frequency, spend, preferences)
-- Personalized marketing campaigns by segment
-- Targeted retention programs for high-value customers
-
-**Expected Impact**: 25-30% increase in customer lifetime value
-
-#### 10. Expansion Readiness Analysis
-**Opportunity**: Use data to identify new location potential
-
-**Actions**:
-- Analyze demographic and performance patterns
-- Create location performance scorecard
-- Identify successful location characteristics
-- Data-driven site selection for expansion
-
-**Expected Impact**: Reduce new location risk by 40-50%
-
----
-
-### 📊 Implementation Priority Matrix
-
-| Priority | Recommendation | Effort | Impact | Timeline |
-|----------|---------------|--------|--------|----------|
-| 🔴 **High** | Birmingham Turnaround | Medium | High | 0-30 days |
-| 🔴 **High** | Weekend Optimization | Low | High | 0-30 days |
-| 🟡 **Medium** | Manchester Model Replication | High | High | 30-90 days |
-| 🟡 **Medium** | Weekday Traffic Program | Medium | Medium | 30-90 days |
-| 🟡 **Medium** | Menu Engineering | Medium | Medium | 30-90 days |
-| 🟢 **Long-term** | Dynamic Pricing | High | High | 6+ months |
-| 🟢 **Long-term** | Predictive Analytics | High | Medium | 6+ months |
-| 🟢 **Long-term** | Customer Segmentation | High | High | 6+ months |
-
----
-
-## 🛠️ Technologies Used
-
-| Category | Technology | Purpose |
-|----------|-----------|---------|
-| **BI Platform** | Power BI Desktop | Dashboard development and visualization |
-| **Data Language** | DAX (Data Analysis Expressions) | Calculated measures and KPIs |
-| **ETL** | Power Query | Data transformation and cleansing |
-| **Data Source** | SQL Server / Excel | Backend data storage |
-| **Version Control** | Git / GitHub | Code and report versioning |
-
-### Key DAX Measures
-
-```dax
